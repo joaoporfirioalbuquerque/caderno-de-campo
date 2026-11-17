@@ -151,3 +151,39 @@ body.dark .albc{background:#1d2622}
 body.simple .adv{display:none!important}
 
 .chip.on .muted{color:inherit;opacity:.8}
+/* ===== Estilos escolhíveis (Dados → Aparência). A = estilo original ===== */
+body.th-B:not(.dark){--paper:#fffdf8;--card:#fffdf8;--ink:#1a1a1a;--muted:#7a746a;--line:#e8e2d6;--moss:#8b2e1f;--moss-2:#f4e6dc;--rust:#8b2e1f;--rust-2:#f4e6dc;--r:3px;background:#efe9dc}
+body.th-B{font-family:'Source Serif 4',Georgia,serif}
+body.th-B h1,body.th-B h2,body.th-B h3,body.th-B .cnt,body.th-B .stat b{font-family:'Playfair Display',Georgia,serif;font-weight:800}
+body.th-B .card{border-width:0 0 1px;border-radius:0;background:transparent}
+body.th-B .btn{border-radius:2px;font-family:Inter,system-ui;text-transform:uppercase;letter-spacing:.06em;font-size:13px}
+body.th-B .tag{font-style:italic;background:transparent;padding:0 3px}
+body.th-B .top h1{font-size:30px}
+body.th-C{--moss:#4ade80;--moss-2:#163323;--paper:#0e1411;--card:#18211c;--line:#26332b;--r:18px;font-family:Inter,system-ui}
+body.th-C h1,body.th-C h2,body.th-C h3{font-family:Inter,system-ui;font-weight:800;letter-spacing:-.02em}
+body.th-C .btn{color:#05230f;border-radius:16px;font-family:Inter;font-weight:800}
+body.th-C .btn.ghost,body.th-C .btn.sm.ghost{color:#4ade80;border-color:#2c5a3f}
+body.th-C .card{border:0}
+body.th-C .tag{background:#163323;color:#4ade80;border-radius:999px}
+body.th-C .chip.on{background:#4ade80;border-color:#4ade80;color:#05230f}
+body.th-D:not(.dark){--paper:#f4f6f8;--card:#fff;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--moss:#0f766e;--moss-2:#ccfbf1;--rust:#e11d48;--rust-2:#ffe4e6;--r:16px;background:#e8ecf0}
+body.th-D,body.th-D .btn{font-family:Inter,system-ui}
+body.th-D h1,body.th-D h2,body.th-D h3{font-family:Inter,system-ui;font-weight:800;letter-spacing:-.025em}
+body.th-D .card{border:0;box-shadow:0 1px 2px rgba(15,23,42,.06),0 4px 14px rgba(15,23,42,.05)}
+body.th-D .btn:not(.ghost){background:linear-gradient(135deg,var(--moss),#14b8a6);box-shadow:0 6px 16px #14b8a630}
+body.th-D .btn.rust{background:var(--rust)}
+body.th-E:not(.dark){--paper:#e7e3d4;--card:#f2efe3;--ink:#23261c;--muted:#6d6f5c;--line:#b9b49c;--moss:#4b5320;--moss-2:#d8d9b8;--rust:#b4471c;--rust-2:#f0d9cc;--r:3px;background:#d9d4c2}
+body.th-E:not(.dark) .phone{background-image:repeating-linear-gradient(0deg,transparent 0 23px,#00000008 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,#00000008 23px 24px)}
+body.th-E{font-family:'Space Grotesk',system-ui}
+body.th-E h1,body.th-E h2,body.th-E h3,body.th-E .btn,body.th-E .cnt,body.th-E .stat b,body.th-E .tag{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.02em}
+body.th-E .card{border:1.5px solid var(--ink);position:relative}
+body.th-E .card::before{content:"";position:absolute;top:-1.5px;left:12px;width:26px;height:3px;background:var(--rust)}
+body.th-E .btn:not(.ghost):not(.rust){background:var(--ink)}
+body.th-E .top h1{font-size:21px}
+body.th-F:not(.dark){--paper:#fff7ec;--card:#fff;--ink:#2b2118;--muted:#8a7a6a;--line:#f1e4d1;--moss:#ff7a45;--moss-2:#ffe6d9;--rust:#e0533a;--sky:#2f7fd0;--r:22px;background:#f6ead8}
+body.th-F,body.th-F .btn,body.th-F h1,body.th-F h2,body.th-F h3{font-family:Nunito,system-ui;font-weight:800}
+body.th-F h1,body.th-F h2{font-weight:900}
+body.th-F .card{border:0;box-shadow:0 4px 0 var(--line)}
+body.th-F .btn{border-radius:999px}
+body.th-F .btn:not(.ghost){box-shadow:0 4px 0 rgba(0,0,0,.15)}
+body.th-F .tag,body.th-F .chip{border-radius:999px}
