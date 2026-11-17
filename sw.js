@@ -1,6 +1,6 @@
 // Service worker: a app abre e funciona sem rede (no campo).
-const V = 'caderno-202611171711';
-const SHELL = ['./', 'index.html', 'css/style.css?v=202611171711', 'js/boot.js?v=202611171711', 'vendor/lame.min.js', 'vendor/supabase.js',
+const V = 'caderno-202611172022';
+const SHELL = ['./', 'index.html', 'css/style.css?v=202611172022', 'js/boot.js?v=202611172022', 'vendor/lame.min.js', 'vendor/supabase.js',
   'vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.css', 'manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V && k !== 'tiles' && k !== 'birdnet' && k !== 'guia').map(k => caches.delete(k))))); self.clients.claim(); });
@@ -11,7 +11,7 @@ self.addEventListener('fetch', e => {
   if (e.request.headers.has('range') || e.request.destination === 'audio' || e.request.destination === 'video') return;
   // Fotos do guia de campo (iNaturalist): usa a cópia guardada; as que vês ficam guardadas para usar sem rede
   if (/inaturalist|upload\.wikimedia\.org/.test(u.host) && /\.(jpe?g|png)$/i.test(u.pathname)) { e.respondWith(caches.open('guia').then(c => c.match(e.request.url).then(r => r || fetch(e.request).then(n => { try { c.put(e.request.url, n.clone()); } catch (x) {} return n; })))); return; }
-  if (u.origin !== location.origin && !/tile\.openstreetmap\.org|arcgisonline\.com|fonts\.(googleapis|gstatic)\.com/.test(u.host)) return;
+  if (u.origin !== location.origin && !/tile\.openstreetmap\.org|arcgisonline\.com|opentopomap\.org|discomap\.eea\.europa\.eu|fonts\.(googleapis|gstatic)\.com/.test(u.host)) return;
   // Supabase, meteorologia e geocodificação: sempre pela rede
   if (/supabase\.co|open-meteo\.com|nominatim/.test(u.host)) return;
   // Modelo BirdNET e TensorFlow: guardados de vez (grandes, mudam raramente)
@@ -20,7 +20,7 @@ self.addEventListener('fetch', e => {
     return;
   }
   // Mosaicos do mapa: guarda os que já viste (útil sem rede)
-  if (/tile\.openstreetmap\.org|arcgisonline\.com/.test(u.host)) {
+  if (/tile\.openstreetmap\.org|arcgisonline\.com|opentopomap\.org|discomap\.eea\.europa\.eu/.test(u.host)) {
     e.respondWith(caches.open('tiles').then(c => c.match(e.request).then(r => r || fetch(e.request).then(n => { c.put(e.request, n.clone()); return n; }))));
     return;
   }
