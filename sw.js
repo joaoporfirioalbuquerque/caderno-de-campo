@@ -1,6 +1,6 @@
 // Service worker: a app abre e funciona sem rede (no campo).
-const V = 'caderno-202611241134';
-const SHELL = ['./', 'index.html', 'css/style.css?v=202611241134', 'js/boot.js?v=202611241134', 'vendor/lame.min.js', 'vendor/supabase.js',
+const V = 'caderno-202611241149';
+const SHELL = ['./', 'index.html', 'css/style.css?v=202611241149', 'js/boot.js?v=202611241149', 'vendor/lame.min.js', 'vendor/supabase.js',
   'vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.css', 'manifest.json', 'icons/icon-192.png', 'icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V && k !== 'tiles' && k !== 'birdnet' && k !== 'guia').map(k => caches.delete(k))))); self.clients.claim(); });
